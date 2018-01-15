@@ -14,7 +14,7 @@ $(function () {
             var content = '';
             var week = util.getThisWeek();
             content += '<h1 style="border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;text-align:center;margin:0px 0px 20px;">\n'
-                + '    <span style="color:#c0504d;">' + week[0].format("yyyy/MM/dd") + ' - ' + week[6].format("yyyy/MM/dd") + '周报</span>\n'
+                + '    <span style="color:#c0504d;">' + week[0].format("yyyy/MM/dd") + ' - ' + week[4].format("yyyy/MM/dd") + '周报</span>\n'
                 + '</h1>\n'
                 + '<p style="text-align:center;">\n'
                 + '    <strong>' + r.user.username + '</strong>\n'
