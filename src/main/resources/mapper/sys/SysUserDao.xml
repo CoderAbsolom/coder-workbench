@@ -66,6 +66,7 @@
 			`user_id`, 
 			`username`, 
 			`password`,
+			`nickname`,
 			`salt`,
 			`email`, 
 			`mobile`, 
@@ -78,6 +79,7 @@
 			#{userId}, 
 			#{username}, 
 			#{password},
+			#{nickname},
 			#{salt},
 			#{email}, 
 			#{mobile}, 
@@ -92,6 +94,7 @@
 		<set> 
 			<if test="username != null">`username` = #{username}, </if>
 			<if test="password != null">`password` = #{password}, </if>
+			<if test="nickname != null">`nickname` = #{nickname}, </if>
 			<if test="email != null">`email` = #{email}, </if>
 			<if test="mobile != null">`mobile` = #{mobile}, </if>
 			<if test="status != null">`status` = #{status}, </if>

@@ -17,7 +17,7 @@ $(function () {
                 + '    <span style="color:#c0504d;">' + week[0].format("yyyy/MM/dd") + ' - ' + week[4].format("yyyy/MM/dd") + '周报</span>\n'
                 + '</h1>\n'
                 + '<p style="text-align:center;">\n'
-                + '    <strong>' + r.user.username + '</strong>\n'
+                + '    <strong>' + r.user.nickname + '</strong>\n'
                 + '</p>';
             for(var i = 0; i < 5; i++){
                 content += '<h3>\n'

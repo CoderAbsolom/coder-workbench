@@ -42,6 +42,11 @@ public class SysUserEntity implements Serializable {
 	private String salt;
 
 	/**
+	 * 昵称
+	 */
+	private String nickname;
+
+	/**
 	 * 邮箱
 	 */
 	@NotBlank(message="邮箱不能为空", groups = {AddGroup.class, UpdateGroup.class})
@@ -119,6 +124,22 @@ public class SysUserEntity implements Serializable {
 	 */
 	public String getPassword() {
 		return password;
+	}
+
+	/**
+	 * 获取：昵称
+	 * @param nickname 昵称
+	 */
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	/**
+	 * 获取：昵称
+	 * @return String
+	 */
+	public String getNickname() {
+		return nickname;
 	}
 	
 	/**
