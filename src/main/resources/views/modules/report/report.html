@@ -22,12 +22,16 @@
     <script src="../../js/utils/util.js"></script>
 </head>
 <body>
-    <div style="margin-bottom: 10px">
-        <button type="button" class="btn btn-default">提交内容</button>
+    <div id="rrapp" v-cloak>
+        <div style="margin-bottom: 10px">
+            <button type="button" class="btn btn-default" @click="commit">提交内容</button>
+            <button type="button" class="btn btn-default" @click="loadTemplate">重载模板</button>
+        </div>
+        <script id="container" name="content" type="text/plain"></script>
     </div>
-    <script id="container" name="content" type="text/plain"></script>
     <script type="text/javascript" src="../../plugins/ueditor/ueditor.config.js"></script>
     <script type="text/javascript" src="../../plugins/ueditor/ueditor.all.js"></script>
+    <script type="text/javascript" src="../../plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
     <script src="../../js/modules/report/report.js"></script>
 </body>
 </html>
