@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by PanZhe on 2018/1/17.
  */
@@ -20,5 +23,20 @@ public class ReportRecordServiceImpl implements ReportRecordService {
     @Transactional
     public void save(ReportRecordEntity record) {
         reportRecordDao.save(record);
+    }
+
+    @Override
+    public List<ReportRecordEntity> queryList(Map<String, Object> map) {
+        return reportRecordDao.queryList(map);
+    }
+
+    @Override
+    public int queryTotal(Map<String, Object> map) {
+        return reportRecordDao.queryTotal(map);
+    }
+
+    @Override
+    public void deleteBatch(String[] reportIds) {
+        reportRecordDao.deleteBatch(reportIds);
     }
 }

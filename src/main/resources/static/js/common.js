@@ -22,6 +22,8 @@ T.p = url;
 //var baseURL = "/renren-fast/";
 var baseURL = "/";
 
+var router;
+
 //登录token
 var token = localStorage.getItem("token");
 if(token == 'null'){
@@ -126,4 +128,13 @@ function getSelectedRows() {
     }
     
     return grid.getGridParam("selarrrow");
+}
+
+function getSelectedRowsData(jqGridID) {
+    var grid = $("#" + jqGridID);
+    var rowKey = grid.getGridParam("selrow");
+    if (!rowKey) {
+        return null;
+    }
+    return grid.getRowData(rowKey);
 }

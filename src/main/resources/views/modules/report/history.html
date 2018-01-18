@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>周报提交记录</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../plugins/jqgrid/ui.jqgrid-bootstrap.css">
+    <link rel="stylesheet" href="../../plugins/ztree/css/metroStyle/metroStyle.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../libs/jquery.min.js"></script>
+    <script src="../../plugins/layer/layer.js"></script>
+    <script src="../../libs/bootstrap.min.js"></script>
+    <script src="../../libs/vue.min.js"></script>
+    <script src="../../plugins/jqgrid/grid.locale-cn.js"></script>
+    <script src="../../plugins/jqgrid/jquery.jqGrid.min.js"></script>
+    <script src="../../plugins/ztree/jquery.ztree.all.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/utils/model.js"></script>
+</head>
+<body>
+<div id="rrapp" v-cloak>
+    <div v-show="showList">
+        <div class="grid-btn">
+            <div class="form-group col-sm-2">
+                <input type="text" class="form-control" v-model="q.nickname" @keyup.enter="query" placeholder="提交人">
+            </div>
+            <a class="btn btn-default" @click="query">查询</a>
+            <a class="btn btn-primary" @click="details"><i class="fa fa-comments-o"></i>&nbsp;详情</a>
+            <a v-if="hasPermission('report:update')" class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+            <a v-if="hasPermission('report:delete')" class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+        </div>
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+    </div>
+    <div v-show="!showList">
+        <a class="btn btn-primary" @click="returnMain" style="margin-bottom: 10px"><i class="fa fa-reply"></i>&nbsp;返回</a>
+        <script id="container" name="content" type="text/plain"></script>
+    </div>
+</div>
+
+<script src="../../js/modules/report/history.js"></script>
+<script type="text/javascript" src="../../plugins/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="../../plugins/ueditor/ueditor.all.js"></script>
+<script type="text/javascript" src="../../plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
+</body>
+</html>

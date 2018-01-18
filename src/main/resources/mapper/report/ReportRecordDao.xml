@@ -7,10 +7,14 @@
 	</select>
 
 	<select id="queryList" resultType="io.renren.modules.report.entity.ReportRecordEntity">
-		select * from report_record
+		select r.*,u.nickname from report_record r
+		left join sys_user u on r.create_user_id = u.user_id
 		<where>
 			<if test="createUserId != null">
-				and `create_user_id` = #{createUserId}
+				and r.create_user_id = #{createUserId}
+			</if>
+			<if test="nickname != null and nickname.trim() != ''">
+				and u.nickname like concat('%',#{nickname},'%')
 			</if>
 		</where>
 		<choose>
@@ -27,10 +31,14 @@
 	</select>
 
 	<select id="queryTotal" resultType="int">
-		select count(*) from report_record
+		select count(*) from report_record r
+		left join sys_user u on r.create_user_id = u.user_id
 		<where>
 			<if test="createUserId != null">
-				and `create_user_id` = #{createUserId}
+				and r.create_user_id = #{createUserId}
+			</if>
+			<if test="nickname != null and nickname.trim() != ''">
+				and u.nickname like concat('%',#{nickname},'%')
 			</if>
 		</where>
 	</select>

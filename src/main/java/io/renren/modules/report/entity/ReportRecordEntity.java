@@ -20,6 +20,16 @@ public class ReportRecordEntity implements Serializable{
 
     private Date createTime;
 
+    private String nickname;
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     public String getReportId() {
         return reportId;
     }

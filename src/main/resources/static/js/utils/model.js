@@ -1,7 +1,7 @@
 var model = {
     //初始化UEditor富文本框插件
-    initUEditor : function (eve) {
-        return UE.getEditor(eve ,{
+    initUEditor : function (eve, param) {
+        var params = {
             toolbars : [
                 ['undo', 'redo', '|',
                     'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
@@ -18,6 +18,8 @@ var model = {
             initialFrameHeight : '80%',
             maximumWords : '1000',//最大1000字
             elementPathEnabled : false//关闭元素统计
-        });
+        };
+        $.extend(true,params,param);
+        return UE.getEditor(eve ,params);
     }
 };

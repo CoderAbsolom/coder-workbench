@@ -104,7 +104,7 @@ var vm = new Vue({
 	},
 	updated: function(){
 		//路由
-		var router = new Router();
+		router = new Router();
 		routerList(router, vm.menuList);
 		router.start();
 	}
