@@ -44,6 +44,8 @@ public class ReportRecordController extends AbstractController {
         }*/
         //查询列表数据
         Query query = new Query(params);
+        query.put("sidx","create_time");
+        query.put("order","desc");
         List<ReportRecordEntity> reportList = reportRecordService.queryList(query);
         int total = reportRecordService.queryTotal(query);
 
