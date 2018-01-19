@@ -28,7 +28,7 @@ public interface ReportRecordService {
     int queryTotal(Map<String, Object> map);
 
     /**
-     * 删除周报
+     * 批量删除周报:指定ID创建的
      */
-    void deleteBatch(String[] reportIds);
+    void deleteBatch(Map<String, Object> map);
 }

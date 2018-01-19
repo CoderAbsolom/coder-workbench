@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,9 +39,9 @@ public class ReportRecordController extends AbstractController {
     @RequiresPermissions("report:list")
     public R list(@RequestParam Map<String, Object> params) {
         //只有超级管理员，才能查看所有管理员列表
-        if(getUserId() != Constant.SUPER_ADMIN){
+        /*if(getUserId() != Constant.SUPER_ADMIN){
             params.put("createUserId", getUserId());
-        }
+        }*/
         //查询列表数据
         Query query = new Query(params);
         List<ReportRecordEntity> reportList = reportRecordService.queryList(query);
@@ -71,8 +72,13 @@ public class ReportRecordController extends AbstractController {
     @SysLog("删除周报")
     @RequestMapping("/delete")
     @RequiresPermissions("report:delete")
-    public R save(@RequestBody String[] userIds) {
-        reportRecordService.deleteBatch(userIds);
+    public R save(@RequestBody String[] reportIds) {
+        Map<String, Object> params = new HashMap<>();
+        if(getUserId() != Constant.SUPER_ADMIN){
+            params.put("createUserId", getUserId());
+        }
+        params.put("reportIds",reportIds);
+        reportRecordService.deleteBatch(params);
         return R.ok();
     }
 }

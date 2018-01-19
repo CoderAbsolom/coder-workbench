@@ -62,11 +62,17 @@
 		)
 	</insert>
 
-	<delete id="deleteBatch">
-		delete from report_record where report_id in
-		<foreach item="reportId" collection="array" open="(" separator="," close=")">
-			#{reportId}
-		</foreach>
+	<delete id="delete">
+		delete from report_record
+		<where>
+			<if test="createUserId != null">
+				and create_user_id = #{createUserId}
+			</if>
+			and report_id in
+			<foreach item="reportId" collection="reportIds" open="(" separator="," close=")">
+				#{reportId}
+			</foreach>
+		</where>
 	</delete>
 
 </mapper>

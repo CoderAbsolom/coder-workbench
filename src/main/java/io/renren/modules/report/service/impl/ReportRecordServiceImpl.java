@@ -36,7 +36,7 @@ public class ReportRecordServiceImpl implements ReportRecordService {
     }
 
     @Override
-    public void deleteBatch(String[] reportIds) {
-        reportRecordDao.deleteBatch(reportIds);
+    public void deleteBatch(Map<String, Object> map) {
+        reportRecordDao.delete(map);
     }
 }
