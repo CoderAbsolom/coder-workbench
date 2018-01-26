@@ -1,6 +1,6 @@
 **项目说明** 
 - 基于[renren-fast](http://git.oschina.net/babaio/renren-fast)开源平台编写的Coder Workbench(才不会承认是欠公司的)
-- 正在施工周报管理模块
+- 周报模块完成
 
 **技术选型：** 
 - 核心框架：Spring Boot 1.5
