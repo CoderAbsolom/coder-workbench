@@ -4,8 +4,8 @@ server:
         uri-encoding: UTF-8
         max-threads: 1000
         min-spare-threads: 30
-    port: 80
-    #context-path: /renren-fast
+    port: 9527
+    context-path: /code-workbench
 
 # mysql
 spring:

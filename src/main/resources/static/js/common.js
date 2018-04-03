@@ -20,7 +20,7 @@ T.p = url;
 //请求前缀
 //var baseURL = "http://demo.open.renren.io/renren-fast/";
 //var baseURL = "/renren-fast/";
-var baseURL = "/";
+var baseURL = "/code-workbench/";
 
 var router;
 
